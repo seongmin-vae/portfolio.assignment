@@ -2,7 +2,6 @@
 title: "대표 활동"
 date: 2026-10-01
 summary: "JAVA로 구현한 딱정벌레 이동"
-image: "/images/ZenBrushstroke.png"
 tags: ["JAVA", "학습"]
 ---
 

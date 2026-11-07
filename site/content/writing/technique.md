@@ -2,7 +2,6 @@
 title: "현재 활용하는 기술, 도구, 역량"
 date: 2026-11-07
 summary: "ChatGPT를 확률 및 통계 수업 학습에 활용"
-image: "/images/ZenBrushstroke.png"
 tags: ["AI", "ChatGPT", "학습"]
 ---
 

@@ -2,6 +2,7 @@
 title: "관심 분야와 학습 계획"
 date: 2026-11-07
 summary: "AI와 게임 개발에 대한 관심, 사용 기술, 학습 목표"
+image: "/images/background.png"
 tags: ["AI", "게임 개발", "학습"]
 ---
 

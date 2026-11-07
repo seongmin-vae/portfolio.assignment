@@ -1,298 +1,260 @@
-# Celadon 🍵
+# Personal Portfolio — Hugo Celadon
 
-**An intellectual portfolio theme exploring the equilibrium between academic rigor and creative design.**
+Hugo와 Celadon 테마를 활용하여 제작한 개인 포트폴리오 웹사이트입니다. 자기소개, 학력 및 활동 이력, 개발 프로젝트, 학습 기록을 소개합니다.
 
-| Preview | Alternate Profile Layout |
-| - | - |
-| <img src="https://github.com/Yajie-Xu/hugo-celadon/blob/main/images/screenshot.png?raw=true" alt="Celadon theme preview" width="900"> | <img src="https://github.com/Yajie-Xu/hugo-celadon/blob/main/images/screenshot2.png?raw=true" alt="Celadon alternate profile layout preview" width="900"> |
+## 1. 프로젝트 정보
 
-➤ Check out the [Live Demo](https://yajie-xu.github.io/hugo-celadon/) | ➤ View on [Hugo Themes](https://themes.gohugo.io/themes/hugo-celadon/)
+| 항목 | 내용 |
+|---|---|
+| 프로젝트명 | Personal Portfolio |
+| 제작자 | 배성민 |
+| 사용 테마 | Hugo Celadon |
+| 정적 사이트 생성기 | Hugo Extended |
+| 버전 관리 | Git / GitHub |
+| 자동 배포 | GitHub Actions |
+| 호스팅 | GitHub Pages |
+| 배포 브랜치 | main |
 
-**Celadon** is a lightweight, responsive, one-page portfolio theme for [Hugo](https://gohugo.io). It is designed for **Academics**, **Data Scientists**, and **Creative Technologists**. It balances a rigorous publication list with a soft, "Morandi" color palette and modern grid layouts.
+- **웹사이트:** https://seongmin-vae.github.io/portfolio.assignment/
+- **GitHub 저장소:** https://github.com/seongmin-vae/portfolio.assignment
+- **GitHub Actions:** https://github.com/seongmin-vae/portfolio.assignment/actions
 
-## ✨ Features
+## 2. 개발 및 실행 환경 (P56)
 
-* **🎨 Morandi Design System:** A calm, high-contrast palette featuring Muted Teal, Warm Clay, and Cinnabar accents.
-* **📜 One-Page Architecture:** A smooth-scrolling homepage that acts as a gateway to deep content.
-* **🌙 Auto Dark Mode:** A sophisticated "Deep Slate" theme for low-light reading.
-* **🧮 Academic Ready:** Native support for **KaTeX** (Math) and **Hugo Chroma** (Code Highlighting) with a "Gemini-style" copy interface.
-* **🧩 Modular Sections:** Easily reorder sections (About, News, Research, Builds, Writing) via `hugo.toml`.
-* **📱 Fully Responsive:** Collapsible layouts that look great on mobile and tablets.
+### 사용 도구 및 버전
 
-## 🚀 Installation
+| 도구 | 버전 | 용도 |
+|---|---|---|
+| Hugo Extended | 0.167.0 | 정적 웹사이트 빌드 |
+| Python | 3.9 이상 | 교수님 제공 준비 스크립트 실행 |
+| Python (Actions) | 3.12 | 배포 자동화 스크립트 실행 |
+| Node.js (Actions) | 24 | 배포 작업 환경 구성 |
+| Go (Actions) | 1.27.1 | Hugo 관련 빌드 환경 |
+| Dart Sass (Actions) | 1.105.0 | 스타일시트 빌드 지원 |
+| Git | 설치된 로컬 버전 | 소스 코드 버전 관리 |
 
-### 1. Initialize Hugo
+배포 준비에는 수업에서 제공된 `prepare_github_pages.py` 버전 3.1을 사용했습니다.
 
-Inside your empty project folder:
+GitHub Actions에서는 워크플로에 지정된 도구를 자동으로 설치합니다. 로컬에서 사이트를 미리 확인하는 경우에는 Git과 Hugo Extended가 기본적으로 필요하며, 테마의 스타일 처리 환경에 따라 Dart Sass가 추가로 필요할 수 있습니다.
+
+### 설치 방법
+
+**1. Git 설치**
+
+https://git-scm.com/downloads
+
+설치 후 Git Bash에서 확인합니다.
 
 ```bash
-hugo new site my-portfolio
-cd my-portfolio
-git init
+git --version
 ```
 
-### 2. Add Celadon Theme
+**2. Hugo Extended 설치**
+
+Hugo Extended 0.167.0 릴리스:
+
+https://github.com/gohugoio/hugo/releases/tag/v0.167.0
+
+운영체제에 맞는 Extended 버전을 다운로드하고 압축을 해제한 뒤, 실행 파일이 있는 경로를 PATH 환경 변수에 등록합니다.
+
+설치 확인:
 
 ```bash
-git submodule add [https://github.com/Yajie-Xu/hugo-celadon.git](https://github.com/Yajie-Xu/hugo-celadon.git) themes/celadon
+hugo version
 ```
 
-### 3. Update Configuration
+출력에 `v0.167.0`과 `extended`가 표시되는지 확인합니다.
 
-Copy the `hugo.toml` from the exampleSite folder to your root, or add this to your existing config:
+**3. Python 설치 (배포 준비 스크립트를 다시 실행하는 경우)**
 
-```toml
-theme = "celadon"
+https://www.python.org/downloads/
+
+Python 3.9 이상이 필요하며, GitHub Actions에서는 Python 3.12를 사용합니다.
+
+```bash
+python --version
 ```
 
-## 📘 User Guide: Customizing Your Site
+기존 저장소에는 배포 준비 결과가 이미 포함되어 있으므로, 사이트 콘텐츠를 수정할 때마다 준비 스크립트를 다시 실행할 필요는 없습니다.
 
-Celadon is designed to separate your **Content** (Markdown) from your **Homepage Layout** (Data).
+## 3. 프로젝트 설치 및 로컬 실행 (P56)
 
-### 1. Project Structure
+### 3.1. 저장소 복제
 
-Here is a map of what you should edit and what you can ignore.
+Git Bash에서 다음 명령어를 실행합니다.
+
+```bash
+git clone https://github.com/seongmin-vae/portfolio.assignment.git
+cd portfolio.assignment
+```
+
+### 3.2. Hugo 사이트 폴더로 이동
+
+실제로 배포되는 Hugo 사이트는 저장소 최상위의 `site/` 폴더 안에 있습니다.
+
+```bash
+cd site
+```
+
+### 3.3. 로컬 개발 서버 실행
+
+```bash
+hugo server --config hugo.toml,pages.json --theme template --themesDir themes --baseURL http://localhost:1313/
+```
+
+실행에 성공하면 브라우저에서 다음 주소에 접속합니다.
+
+http://localhost:1313/
+
+개발 서버가 실행 중인 동안에는 Markdown 콘텐츠와 설정 파일을 수정하면서 결과를 확인할 수 있습니다.
+
+서버를 종료하려면 터미널에서 `Ctrl + C`를 누릅니다.
+
+### 3.4. 정적 사이트 빌드
+
+`site/` 폴더에서 다음 명령어를 실행합니다.
+
+```bash
+hugo --gc --minify --config hugo.toml,pages.json --destination ../public --baseURL https://seongmin-vae.github.io/portfolio.assignment/ --theme template --themesDir themes --enableGitInfo=false
+```
+
+빌드 결과는 저장소 최상위의 `public/` 폴더에 생성됩니다.
+
+실제 GitHub Pages 배포에서는 교수님이 제공하신 자동화 스크립트가 추가로 URL 경로를 보정합니다. 따라서 로컬 Hugo 빌드와 배포용 빌드에는 이 처리 과정의 차이가 있습니다.
+
+## 4. 주요 파일 구조 및 수정 위치 (P57)
 
 ```text
-my-portfolio/
-├── hugo.toml                <-- ⚙️ CONFIG: Menu, Title, Section ordering
-├── content/                 <-- 📝 CONTENT: Your deep pages (Blogs, Papers)
-│   ├── study/               
-│   │   ├── _index.md        <-- Required for the section cover info
-│   │   └── math-note.md     <-- Actual content page
-│   └── _index.md            <-- Do not delete (Homepage entry point)
-├── data/                    <-- 🗂️ HOMEPAGE DATA: Content for the main page cards
-│   ├── news.yaml            <-- Matches "news" section
-│   ├── research.yaml        <-- Matches "research" section
-│   └── profile.yaml         <-- Your bio info
-├── static/                  <-- 🖼️ ASSETS: Images, PDFs
-│   └── images/              
-├── themes/                  <-- ⛔ THEME: Do not edit directly
-│   └── celadon/
-│       ├── images/          
-│       │   ├── tn.png       <-- Ignore (Required for Hugo Gallery)
-│       │   └── screenshot.png <-- Ignore (Required for Hugo Gallery)
-│       └── ...
-└── ...
+portfolio.assignment/
+├── .github/
+│   ├── workflows/
+│   │   └── hugo-pages.yml
+│   └── pages_build.py
+├── site/
+│   ├── hugo.toml
+│   ├── pages.json
+│   ├── data/
+│   │   ├── profile.yaml
+│   │   ├── news.yaml
+│   │   ├── research.yaml
+│   │   └── writing.yaml
+│   ├── content/
+│   │   └── writing/
+│   ├── static/
+│   │   └── images/
+│   └── themes/
+│       └── template/
+├── .github-pages.json
+├── prepare_github_pages.py
+└── README.md
 ```
 
-### 2. Managing the Homepage
+### 주요 수정 파일
 
-The homepage is built dynamically based on your configuration.
+| 파일 경로 | 수정 내용 |
+|---|---|
+| `site/hugo.toml` | 사이트 제목, 메뉴, 섹션 구성, Hugo 설정 |
+| `site/data/profile.yaml` | 자기소개, 프로필 사진, 외부 링크 |
+| `site/data/news.yaml` | EXPERIENCE 섹션의 학력 및 활동 이력 |
+| `site/data/research.yaml` | PROJECTS 섹션의 프로젝트 정보 |
+| `site/data/writing.yaml` | WRITING 섹션의 카드 정보 |
+| `site/content/writing/` | 개별 Markdown 게시글 및 학습 기록 |
+| `site/static/images/` | 프로필, 프로젝트, 게시글 이미지 |
+| `site/themes/template/assets/css/main.css` | 테마의 CSS 디자인 및 메뉴 스타일 |
+| `site/pages.json` | GitHub Pages 배포 주소 등 운영 설정 |
+| `.github/workflows/hugo-pages.yml` | GitHub Actions 자동 배포 설정 |
 
-**Step 1: Define Sections** Open `hugo.toml`. Under `[params.homepage]`, the `sections` list determines what appears and in what order.
+일반적인 콘텐츠 수정은 `site/data/`, `site/content/`, `site/static/images/`에서 수행합니다.
 
-````toml
-[params.homepage]
-  sections = ["hero", "news", "research", "writing"]
-````
+배포 주소나 빌드 설정을 변경하지 않는 한 `site/pages.json`, `.github-pages.json`, `.github/pages_build.py` 등을 수정할 필요는 없습니다.
 
-**Step 2: Create Matching Data Files** For every item in that list (e.g., `"writing"`), Hugo looks for a matching YAML file in the `data/` folder (e.g., `data/writing.yaml`).
+## 5. GitHub Actions 자동 배포 방법 (P57)
 
-* *Note*: The naming is case-insensitive, but keeping them lowercase is recommended.
+이 프로젝트는 `main` 브랜치에 새로운 커밋이 push되면 GitHub Actions를 통해 자동으로 빌드 및 배포되도록 구성되어 있습니다.
 
-**Step 3: Choose the Layout** In `hugo.toml`, tell Celadon how to render that section:
+### 5.1. 파일 수정
 
-```toml
-[params.homepage.writing]
-  enable = true
-  title = "Selected Writing"
-  layout = "grid"  # Options: "hero", "news", "cards", "grid"
+VS Code 등의 편집기를 사용하여 필요한 파일을 수정하고 저장합니다.
+
+예를 들어 새로운 학습 기록을 작성하려면 `site/content/writing/` 폴더에 Markdown 파일을 추가합니다.
+
+### 5.2. 변경 파일 확인
+
+저장소 최상위 폴더에서 Git Bash를 실행하고 다음 명령어를 입력합니다.
+
+```bash
+git status
 ```
 
-For timeline-style sections that use the `news` layout, you can also set how many entries are visible before the “Show More” button appears:
+### 5.3. 변경 사항 커밋
 
-```toml
-[params.homepage.news]
-  enable = true
-  title = "Updates"
-  layout = "news"
-  limit = 5
+```bash
+git add -A
+git commit -m "Update portfolio content"
 ```
 
-The `limit` value controls the number of `data/news.yaml` items shown initially on the homepage. If there are more entries than the limit, Celadon hides the rest behind the expandable button.
+실제 수정 내용에 따라 커밋 메시지를 구체적으로 작성합니다.
 
-### 3. Creating Deep Pages (Sub-pages)
+### 5.4. main 브랜치에 push
 
-To link a Homepage Card (e.g., "Study Notes") to a list of actual articles:
-
-**3.1. Create the Folder Structure** Inside `content/`, create a folder that matches your topic. You must include an `_index.md` file for the list layout to work.
-
-```text
-content/
-└── study/
-    ├── _index.md       <-- The "List" page definition
-    ├── note-01.md
-    └── note-02.md
+```bash
+git push origin main
 ```
 
-**3.2. Configure** `_index.md` This file defines the title and description users see when they click through.
+push가 완료되면 `.github/workflows/hugo-pages.yml`에 정의된 워크플로가 자동으로 실행됩니다.
 
-```markdown
----
-title: "Study Notes"
-description: "My raw notes on math and code."
-layout: "list"
----
-(Welcome text here...)
+### 5.5. GitHub Actions 확인
+
+다음 페이지에 접속합니다.
+
+https://github.com/seongmin-vae/portfolio.assignment/actions
+
+`Deploy Hugo to GitHub Pages` 워크플로의 최신 실행을 선택한 뒤 다음 두 작업을 확인합니다.
+
+- **build:** Hugo 정적 사이트 빌드 및 배포 파일 생성
+- **deploy:** GitHub Pages에 생성 결과물 게시
+
+두 작업이 모두 성공했는지 확인합니다.
+
+오류가 발생하면 실패한 작업을 클릭하여 로그를 확인하고, 원인을 수정한 후 다시 commit 및 push합니다.
+
+### 5.6. 공개 웹사이트에서 변경 사항 확인
+
+배포가 성공하면 다음 주소에 접속합니다.
+
+https://seongmin-vae.github.io/portfolio.assignment/
+
+수정한 내용이 실제 공개 화면에 반영되었는지 확인합니다.
+
+변경 사항이 보이지 않으면 브라우저에서 `Ctrl + Shift + R`을 눌러 강력 새로고침하거나 시크릿 창에서 확인합니다.
+
+소개, 경력, 프로젝트, 게시글 등의 메뉴가 정상적으로 이동하는지도 확인합니다.
+
+## 6. 최종 커밋 및 배포 버전 확인
+
+현재 GitHub 원격 저장소의 `main` 브랜치 최신 커밋 SHA는 다음 명령어로 확인할 수 있습니다.
+
+```bash
+git ls-remote origin refs/heads/main
 ```
 
-**3.3. Add Articles** Inside the same folder, add your individual notes or articles as separate Markdown files.
+로컬 저장소에서 현재 체크아웃된 커밋은 다음과 같이 확인합니다.
 
-```markdown
----
-title: "Understanding Eigenvalues"
-date: 2025-11-20
-summary: "A deep dive into eigenvalues and their applications."
-image: "/images/EigenArt.png"
-tags: ["Math", "Linear Algebra"]
----
-(Content of the article...)
+```bash
+git rev-parse HEAD
 ```
 
-**3.4. Link it from the Homepage** Open your data file (e.g., `data/writing.yaml`) and set the `link` property to the folder path.
+최종 제출 보고서에는 원격 `main`의 전체 SHA와 해당 커밋 URL, 대응되는 Actions 실행 URL 및 상태를 기록합니다.
 
-```yaml
-items:
-  - title: "Study Notes"
-    image: "/images/cover.jpg"
-    link: "/study/"   <-- This points to content/study/_index.md
-```
+## 7. 사용 테마 및 출처
 
-### 4. System Files (What to Ignore)
+- **테마:** [Hugo Celadon](https://themes.gohugo.io/themes/hugo-celadon/)
+- **테마 원본:** https://github.com/Yajie-Xu/hugo-celadon
+- **정적 사이트 생성기:** https://gohugo.io/
+- **배포 플랫폼:** https://pages.github.com/
+- **배포 준비:** 수업에서 제공한 `prepare_github_pages.py` v3.1
+- **테마 라이선스:** MIT License
 
-If you look inside themes/hugo-celadon/, you will see specific image files required for theme submission. You do not need to replace these unless you are forking the theme to release your own version.
+원본 테마의 라이선스와 저작자 고지를 유지합니다.
 
-* images/screenshot.png: Used by the Hugo Theme Gallery to preview the theme.
-
-* images/tn.png: A thumbnail used by the Hugo Theme Gallery.
-
-* layouts/: The logic engine. Don't touch unless you are a developer modifying the core code.
-
-## Rich Text & Custom Labels
-
-| Area | Field(s) | Rich Text Capabilities | Notes |
-| - | - | - | - |
-| Profile card (`data/profile.yaml`) | `title`, `summary`, `affiliation` | Inline HTML (`<br>`, `<em>`) + Markdown (`~~strike~~`, `**bold**`) | Rendered through `enrich-text`, so HTML/Markdown mixes safely. |
-| News timeline (`data/news.yaml`) | `detail` | Markdown links `[text](url)` + inline formatting | Badges stay plain strings; only `detail` is enriched. |
-| Research cards (`data/research.yaml`) | `summary`, `links`, `coauthors`, `coauthors_label` | Markdown summaries, standard YAML links, per-card label overrides | `coauthors_label`/`coauthorsLabel` replaces the default “Co-authors”. |
-
-Common rich text patterns:
-
-| Style | YAML example | Result |
-| - | - | - |
-| Bold | `detail: "Released **Celadon v2.0**"` | Normal Markdown bold |
-| Accent text | `detail: "Released ~~Celadon v2.0~~"` | Theme accent color |
-| Highlight pill | `detail: "Released ==Celadon v2.0=="` | Soft highlighted mark |
-| Link | `detail: "Read the [docs](https://example.com)"` | Styled Markdown link |
-
-#### Example Snippet for Profile
-
-```yaml
-# Profile
-name: "Dr. Ada Sol"
-title: "Research Lead • AstroEconomics<br>M.S. • Applied AI"
-summary: >
-  Explorer of ~~boring~~ *bold* market dynamics on Mars. Enthusiastic about
-  cooperative agents and <strong>playful policy experiments</strong>.
-affiliation: "New Olympus University<br><em>Institute for Stellar Trade</em>"
-profile_image: "/images/profile.png"
-profile_layout: "modern" # Options: "modern" or "classic"
-profile_image_style: "circle" # Options: "circle" or "rectangle"
-list:
-  - "Bullet-style highlight"
-  - "Another highlight"
-keyword_sections:
-  - title: "Keyword Badge Section"
-    rows:
-      - ["Badge One", "Badge Two"]
-```
-
-Use `list` for the original bullet-style profile highlights. Use `keyword_sections` for grouped badge rows. If both are present, both render: `keyword_sections` first, then `list`.
-
-#### Example Snippet for News
-
-```yaml
-# News Entry
-- date: "Jan 2026"
-  detail: "Presented joint work with [Ravi Zenith](https://example.com) on comet-futures at the [Galactic Finance Forum](https://example.org)."
-  badges: ["Talk"]
-```
-
-#### Example Snippet for Cards
-
-```yaml
-# Research Card
-- title: "Agentic Hedging in Zero-G Ports"
-  summary: >
-    Simulates cargo-insurance strategies using cooperative RL pilots.
-  coauthors_label: "Collaborators"
-  coauthors:
-    - name: "Eli Vega"
-      url: "https://eli-vega.space"
-    - name: "Mira Chen"
-  image: "/images/research/zero-g.jpg"
-  tags: ["RL", "finance"]
-  links:
-    - label: "Preprint"
-      url: "https://example.com/zero-g.pdf"
-```
-
-<!-- ## Rich Text in Profile + News
-
-Both `data/profile.yaml` and `data/news.yaml` are rendered with `safeHTML`, so you can mix Markdown + inline HTML to highlight important bits.
-
-### Supported Patterns
-
-| Purpose          | Syntax in YAML (raw text)                                           | Notes                              |
-|------------------|---------------------------------------------------------------------|------------------------------------|
-| **Bold**         | `detail: "**Accepted** to CVPR 2025."`                              | Standard Markdown bold             |
-| *Italic*         | `summary: "*Behavioral* + computational economics."`                | Standard Markdown italic           |
-| Hyperlink        | `detail: "Joint work with [Kazuma Takakura](https://kazumatakakura.github.io/)"` | Markdown links auto-styled         |
-| Highlight text   | `summary: "Exploring <mark>Bayesian incentives</mark> in markets."` | Uses hero highlight pill colors    |
-| Accent in news   | `detail: "<span class=\"news-accent\">1st Place</span> Best Overall"` | Renders in accent color for news only |
-| Line break       | `title: "Ph.D. Candidate • Economics<br>M.S. • Artificial Intelligence"` | Use `<br>` where you want the break |
-
-### Example
-
-```yaml
-# data/profile.yaml
-summary: >
-  Interdisciplinary researcher studying <mark>network economics</mark> and
-  <a href="/writing/">computational design</a>.
-highlights:
-  - "Co-led the <mark>Impact Lab</mark> fellowship."
-  - "Published *Bayesian Incentives* in **Econometrica**."
-
-# data/news.yaml
-- date: "Nov 2025"
-  detail: "Presented joint work with [Kazuma Takakura](https://kazumatakakura.github.io/) on innovation networks."
-  badges: ["Talk"]
-
-- date: "Apr 2025"
-  detail: "<span class=\"news-accent\">1st place</span> Best Overall at [HackUSF 2025](https://devpost.com/software/skin-scan)."
-  badges: ["Award"]
-``` -->
-
-## 🤠 Favicon
-
-To customize the favicon, add your `favicon.ico` files to the `static/` directory of your Hugo site. You can generate a favicon using online tools like [favicon.io](https://favicon.io/). The files' name are automactically genreated via the tool. The file structure should look like this:
-
-```text
-static/
-├─ android-chrome-192x192.png
-├─ android-chrome-512x512.png
-├─ apple-touch-icon.png
-├─ favicon-16x16.png
-├─ favicon-32x32.png
-├─ favicon.ico
-└─ site.webmanifest
-```
-
-## ⚖️ License
-
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/Yajie-Xu/hugo-celadon/blob/main/LICENSE.txt) file for details.
-
-## 👩🏻‍💻 Author
-
-[Yajie Xu](https://yajiexu.com)
+사이트 내 콘텐츠는 개인이 직접 작성하거나 수정한 내용이며, 외부 자료 및 AI 생성 자료를 사용한 경우 해당 자료의 출처와 사용 목적을 별도로 표시합니다.

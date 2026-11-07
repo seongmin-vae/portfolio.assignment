@@ -1,32 +1,27 @@
 
-baseURL = 'https://yajie-xu.github.io/hugo-celadon/'
-languageCode = 'en-us'
-title = 'Dr. Celadon'
+baseURL = 'https://seongmin-vae.github.io/portfolio.assignment/'
+languageCode = 'ko'
+title = 'Seongmin Portfolio'
 
 enableRobotsTXT = true
 
 [params]
-  description = 'Computational Archaeologist weaving ancient history with modern algorithms.'
-  email = 'alex@example.com'
-  location = 'Tampa, USA'
+  description = '초급프로젝트 수업 과제 및 학습용 개인 포트폴리오'
+  email = 'baesungmin1267@naver.com'
+  location = 'Jeon-ju, South Korea'
 
 [params.homepage]
-  sections = ["hero", "news", "research", "writing"]
+  sections = ["hero", "research", "writing"]
 
   [params.homepage.hero]
     enable = true
     layout = "hero"
     title = "About"
 
-  [params.homepage.news]
-    enable = true
-    layout = "news"
-    title = "News"
-
   [params.homepage.research]
     enable = true
     layout = "cards"
-    title = "Research"
+    title = "Projects"
 
   [params.homepage.writing]
     enable = true

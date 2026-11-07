@@ -11,22 +11,28 @@ enableRobotsTXT = true
   location = 'Jeon-ju, South Korea'
 
 [params.homepage]
-  sections = ["hero", "research", "writing"]
+  sections = ["hero", "news", "research", "writing"]
 
   [params.homepage.hero]
     enable = true
     layout = "hero"
-    title = "About"
+    title = "ABOUT"
+
+  [params.homepage.news]
+    enable = true
+    layout = "news"
+    title = "EXPERIENCE"
+    limit = 5
 
   [params.homepage.research]
     enable = true
     layout = "cards"
-    title = "Projects"
+    title = "PROJECTS"
 
   [params.homepage.writing]
     enable = true
     layout = "grid"
-    title = "Writing"
+    title = "WRITING"
 
 
 [markup]

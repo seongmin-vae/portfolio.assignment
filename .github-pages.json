@@ -1,0 +1,13 @@
+{
+  "config": "hugo.toml,pages.json",
+  "theme": "template",
+  "sample": "exampleSite",
+  "version": "0.167.0",
+  "slug": "hugo-celadon",
+  "npm": [],
+  "asset_build": [],
+  "generator": "3.1",
+  "repo": "https://github.com/seongmin-vae/portfolio.assignment.git",
+  "baseURL": "https://seongmin-vae.github.io/portfolio.assignment/",
+  "audited": true
+}

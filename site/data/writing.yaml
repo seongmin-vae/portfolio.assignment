@@ -1,5 +1,5 @@
 writing:
   - name: "Development and Studying Notes"
-    description: "관심 분야, 학습 목표, 프로젝트 개발 경험을 정리한 공간입니다.<br>클릭 시 이동합니다."
-    image: "/images/ZenBrushstroke.png"
+    description: "관심 분야, 학습 목표, 프로젝트 개발 경험을 정리한 공간입니다. 클릭 시 이동합니다."
+    image: "/images/background.png"
     url: "/writing/"

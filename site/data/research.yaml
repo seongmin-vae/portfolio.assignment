@@ -10,8 +10,8 @@ papers:
     links:
       - label: "GitHub"
         url: "https://github.com/seongmin-vae/movie-lab-action.git"
- //     - label: "Code"
- //       url: "#"
+#     - label: "Code"
+#      url: "#"
 
   # --- Hidden initially ---
 
